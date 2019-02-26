@@ -49,6 +49,7 @@ semanage port -a -t http_port_t -p tcp 8080
 semanage port -a -t http_port_t -p tcp 4443
 ```
 **Reload systemctl**
+```
 systemctl daemon-reload 
 systemctl start httpd-py2.service 
-
+```
