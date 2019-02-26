@@ -33,10 +33,6 @@ def hello_world():
        return render_template('hello.j2', **vars_dict) #name='joe')
 
 
-
-
-
-
 # Start Flask Process
 if __name__ == '__main__':
    app.run(debug=True)
