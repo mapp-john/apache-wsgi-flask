@@ -28,6 +28,8 @@ cp /usr/local/lib/python3.5/site-packages/mod_wsgi/server/mod_wsgi_3.5.so /etc/h
 
 **You will then need to repeat the above steps for WSGI installation into the HTTPD_PY2 modules**
 
+**And configure a proxy rule on the HTTPD_PY3 to the HTTPD_PY2 for the URL to the PY2 app**
+
 
 ## Installing second instance of HTTPD
 **Copy and modify HTTPD service, config, and system files**
