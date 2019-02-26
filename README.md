@@ -1,5 +1,5 @@
 # Apache -> WSGI -> Flask Web app
-** Flask Web App hosted on a LAMP server, with WSGI integration into Python **
+**Flask Web App hosted on a LAMP server, with WSGI integration into Python**
 
 
 
