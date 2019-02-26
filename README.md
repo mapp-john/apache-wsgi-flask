@@ -1,5 +1,5 @@
 # Apache -> WSGI -> Flask Web app
-**Flask Web App hosted on a LAMP server, with [WSGI](https://pypi.org/project/mod_wsgi/) integration into Python**
+**Flask Web App hosted on a LAMP server, with [WSGI](https://pypi.org/project/mod_wsgi/) integration into Python3**
 ## Install Apache HTTPD 2.4 
 ```
 yum -y install httpd24 httpd24-httpd-devel
@@ -12,14 +12,16 @@ yum -y install python35u-3.5.1
 yum -y install python35u-pip
 ```
 ## In order to integrate Apache and Python, we need to install WSGI.
-### Do not use ```yum -y install mod_wsgi```, because by default it will be built with Python2.
-### Instead, use PIP to install, then copy to the ```/etc/httpd/modules```
+#### Do not use ```yum -y install mod_wsgi```, because by default it will be built with Python2.
+#### Instead, use PIP to install, then copy to the ```/etc/httpd/modules```
 ```
 cp /usr/local/lib/python3.5/site-packages/mod_wsgi/server/mod_wsgi_3.5.so /etc/httpd/modules/mod_wsgi_3.5.so
 ```
 
-
-
+## Python2
+**If you have an app that requires Python2, you can run simultaniously with the Python3 app.**
+**However, it does require a secondary installation of HTTPD2.4**
+**You will then need to repeat the above steps for WSGI installation into the HTTPD_PY2 modules**
 
 
 ## Installing second instance of HTTPD
