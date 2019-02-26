@@ -15,8 +15,8 @@ yum -y install python35u-pip
 yum -y install python35u-devel
 ```
 ## In order to integrate Apache and Python, we need to install WSGI.
-#### Do not use ```yum -y install mod_wsgi```, because by default it will be built with Python2.
-#### Instead, use PIP to install, then copy to the ```/etc/httpd/modules```
+#### _DO NOT USE_ ```yum -y install mod_wsgi```, because by default it will be built with Python2.
+#### Instead,use ```pip3 install mod_wsgi```, then copy to the ```/etc/httpd/modules```
 ```
 cp /usr/local/lib/python3.5/site-packages/mod_wsgi/server/mod_wsgi_3.5.so /etc/httpd/modules/mod_wsgi_3.5.so
 ```
