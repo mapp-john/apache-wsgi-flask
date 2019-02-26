@@ -34,8 +34,10 @@ def hello_world():
 
 
 # Start Flask Process
+# Not required for WSGI
+# but allows you to natively test your app.py
 if __name__ == '__main__':
    app.run(debug=True)
-
+#
 # Rename App to Application for WSGI
 application = app
