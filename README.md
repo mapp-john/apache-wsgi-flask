@@ -23,7 +23,9 @@ cp /usr/local/lib/python3.5/site-packages/mod_wsgi/server/mod_wsgi_3.5.so /etc/h
 
 ## Python2
 **If you have an app that requires Python2, you can run simultaniously with the Python3 app.**
+
 **However, it does require a secondary installation of HTTPD2.4**
+
 **You will then need to repeat the above steps for WSGI installation into the HTTPD_PY2 modules**
 
 
