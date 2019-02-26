@@ -1,5 +1,6 @@
 # Apache -> WSGI -> Flask Web app
 **Flask Web App hosted on a LAMP server, with [WSGI](https://pypi.org/project/mod_wsgi/) integration into Python3**
+More details regarding [WSGI](https://modwsgi.readthedocs.io/en/develop/configuration.html)
 ## Install Apache HTTPD 2.4 
 ```
 yum -y install httpd24 httpd24-httpd-devel
