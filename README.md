@@ -8,8 +8,9 @@ yum -y install httpd24 httpd24-httpd-devel
 ```
 yum -y install yum-utils
 yum -y install https://centos7.iuscommunity.org/ius-release.rpm
-yum -y install python35u-3.5.1
+yum -y install python35u
 yum -y install python35u-pip
+yum -y install python35u-devel
 ```
 ## In order to integrate Apache and Python, we need to install WSGI.
 #### Do not use ```yum -y install mod_wsgi```, because by default it will be built with Python2.
