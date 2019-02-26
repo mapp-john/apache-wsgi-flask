@@ -3,13 +3,13 @@
 
 *More details regarding [WSGI Configuration](https://modwsgi.readthedocs.io/en/develop/configuration.html)*
 ## Install Apache HTTPD 2.4 
-```
+```bash
 yum -y install httpd24 httpd24-httpd-devel
 ```
 ## Install Python3
-```
+```bash
 yum -y install yum-utils
-yum -y install https://centos7.iuscommunity.org/ius-release.rpm
+yum -y install "https://centos7.iuscommunity.org/ius-release.rpm"
 yum -y install python35u
 yum -y install python35u-pip
 yum -y install python35u-devel
@@ -17,7 +17,7 @@ yum -y install python35u-devel
 ## In order to integrate Apache and Python, we need to install WSGI.
 #### _DO NOT USE_ ```yum -y install mod_wsgi```, because by default it will be built with Python2.
 #### Instead,use ```pip3 install mod_wsgi```, then copy to the ```/etc/httpd/modules```
-```
+```bash
 cp /usr/local/lib/python3.5/site-packages/mod_wsgi/server/mod_wsgi_3.5.so /etc/httpd/modules/mod_wsgi_3.5.so
 ```
 
@@ -33,7 +33,7 @@ cp /usr/local/lib/python3.5/site-packages/mod_wsgi/server/mod_wsgi_3.5.so /etc/h
 
 ## Installing second instance of HTTPD
 **Copy and modify HTTPD service, config, and system files**
-```
+```bash
 cp /usr/lib/systemd/system/httpd.service /usr/lib/systemd/system/httpd-py2.service; cp -pr /etc/httpd /etc/httpd-py2; cp /etc/sysconfig/httpd /etc/sysconfig/httpd-py2
 mv /etc/httpd-py2/run/httpd.pid /etc/httpd-py2/run/httpd-py2.pid
 
@@ -44,12 +44,12 @@ vim /etc/sysconfig/httpd-py2
 vim /etc/httpd-py2/conf.d/flask.conf 
 ```
 **modify SElinux to allow the secondary service to communicate**
-```
+```bash
 semanage port -a -t http_port_t -p tcp 8080
 semanage port -a -t http_port_t -p tcp 4443
 ```
 **Reload systemctl**
-```
+```bash
 systemctl daemon-reload 
 systemctl start httpd-py2.service 
 ```
